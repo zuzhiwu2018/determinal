@@ -3,7 +3,17 @@
   "pipeline": {
     "typecheck": {
       "dependsOn": [],
-      "outputs": ["dist"]
+      "outputs": []
+    },
+    "start": {
+      "dependsOn": ["^typecheck"],
+      "cache": false
+    },
+    "lint": {
+      "outputs": []
+    },
+    "lint:fix": {
+      "outputs": []
     }
   }
 }

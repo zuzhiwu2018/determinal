@@ -1,0 +1,26 @@
+{
+  "name": "determinal-snap",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "files": [
+    "dist/",
+    "images/",
+    "snap.manifest.json"
+  ],
+  "scripts": {
+    "build": "mm-snap build",
+    "serve": "mm-snap serve",
+    "start": "mm-snap manifest --fix && mm-snap watch",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint --fix src --ext .ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@metamask/snaps-cli": "^0.30.0"
+  },
+  "dependencies": {
+    "@metamask/snaps-types": "^0.32.2",
+    "@metamask/snaps-ui": "^0.32.2"
+  }
+}

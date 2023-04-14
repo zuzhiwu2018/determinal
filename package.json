@@ -4,6 +4,10 @@
   "private": true,
   "description": "",
   "scripts": {
+    "start:snap": "turbo run --filter=determinal-snap start",
+    "start:frontend": "turbo run --filter=determinal-frontend start",
+    "lint": "turbo run lint --parallel",
+    "lint:fix": "turbo run lint:fix --parallel",
     "typecheck": "turbo run typecheck"
   },
   "keywords": [],
@@ -40,5 +44,11 @@
     "node_modules",
     "dist"
   ],
-  "packageManager": "pnpm@latest"
+  "packageManager": "pnpm@latest",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "eslint": "^8.27.0",
+    "eslint-plugin-prettier": "^4.2.1"
+  }
 }

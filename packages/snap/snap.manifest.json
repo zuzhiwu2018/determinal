@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "description": "An example Snap written in TypeScript.",
+  "proposedName": "TypeScript Example Snap",
+  "source": {
+    "shasum": "UiQg//7D/MjQXHK+toNxQzAbapg5iLhH3Swviq/JlG8=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "iconPath": "images/icon.svg",
+        "packageName": "determinal-snap",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "snap_dialog": {},
+    "endowment:network-access": {},
+    "endowment:ethereum-provider": {},
+    "endowment:transaction-insight": {
+      "allowTransactionOrigin": true
+    }
+  },
+  "manifestVersion": "0.1"
+}
