@@ -2,3 +2,9 @@ build
 node_modules
 dist
 .turbo
+.cache
+.env
+.vercel
+.output
+packages/frontend/api/
+packages/frontend/public/build

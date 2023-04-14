@@ -1,3 +1,9 @@
 {
-  "$schema": "https://turbo.build/schema.json"
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "typecheck": {
+      "dependsOn": [],
+      "outputs": ["dist"]
+    }
+  }
 }

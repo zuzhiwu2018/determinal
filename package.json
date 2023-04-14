@@ -4,6 +4,7 @@
   "private": true,
   "description": "",
   "scripts": {
+    "typecheck": "turbo run typecheck"
   },
   "keywords": [],
   "author": "",

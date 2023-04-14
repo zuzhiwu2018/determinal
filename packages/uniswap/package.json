@@ -1,7 +1,10 @@
 {
-  "name": "determinal-api",
+  "name": "determinal-uniswap",
   "private": true,
   "version": "1.0.0",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
   "devDependencies": {
     "@types/node": "^18.15.11"
   }
