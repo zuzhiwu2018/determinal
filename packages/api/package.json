@@ -1,0 +1,8 @@
+{
+  "name": "determinal-api",
+  "private": true,
+  "version": "1.0.0",
+  "devDependencies": {
+    "@types/node": "^18.15.11"
+  }
+}
