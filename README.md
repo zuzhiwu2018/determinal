@@ -22,3 +22,21 @@ a Uniswap position in simple terms.
  - Open the browser at `http://localhost:3000`, chat with the AI and install the Snap
  - Try to create a new liquidity position on Uniswap!
 
+
+## Screenshots
+
+Ask a question about Uniswap V3, get an easy-to-understand answer. We also
+include a way to see all steps that the AI had to take to answer you.
+
+![screen1](https://user-images.githubusercontent.com/282580/232247915-0b8ae437-21df-478f-b4f9-502d1d3fa123.png)
+
+
+Install MetaMask Snap
+
+![screen2](https://user-images.githubusercontent.com/282580/232247960-66458dab-668c-48bb-8aed-c1f671825444.png)
+
+
+Display AI recommendation directly in MetaMask!
+
+![screen3](https://user-images.githubusercontent.com/282580/232247982-c039e4b4-7a9c-4210-bfe4-eb27f2027e1e.png)
+
