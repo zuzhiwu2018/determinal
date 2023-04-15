@@ -15,7 +15,7 @@ import { renderToPipeableStream, renderToString } from 'react-dom/server'
 import { ServerStyleContext } from './context'
 import createEmotionCache from './createEmotionCache'
 
-const ABORT_DELAY = 5_000
+const ABORT_DELAY = 60_000
 
 export default function handleRequest(
   request: Request,

@@ -3,7 +3,7 @@
   "description": "Help understand Uniswap V3 liquidity",
   "proposedName": "DeTerminal Tx Analyzer",
   "source": {
-    "shasum": "Gr1UWq9KvUi/J6Bb/pH52Q79u7IADxLO3UDNdkoXFEM=",
+    "shasum": "ZbnLRO8Dz09TUj0ExsRFrKiBgn0rhwF1Dtq4chKQrkw=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

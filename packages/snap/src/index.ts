@@ -10,7 +10,8 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
   console.log('waiting for body')
   const body = await response.json()
   console.log(body)
+  const message = body['message'] ?? 'Could not fetch data'
   return {
-    content: panel([heading('DeTerminal 🤝 Uniswap V3'), text('Do x y z')]),
+    content: panel([heading('DeTerminal 🤝 Uniswap'), text(message)]),
   }
 }

@@ -1,8 +1,16 @@
+import { PassThrough } from 'node:stream'
+import { Response } from '@remix-run/node'
 import { json, LoaderArgs } from '@remix-run/node'
 import { ethers } from 'ethers'
 import INonfungiblePositionManager from '@uniswap/v3-periphery/artifacts/contracts/interfaces/INonfungiblePositionManager.sol/INonfungiblePositionManager.json'
 import { tickToPrice } from '~/lib/tools'
 import { createAgent } from '~/lib/agent'
+
+const cors = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': '*',
+    'Access-Control-Allow-Headers': '*',
+}
 
 export async function loader({ request }: LoaderArgs) {
   if (request.method === 'OPTIONS') {
@@ -10,9 +18,8 @@ export async function loader({ request }: LoaderArgs) {
       { message: 'ok' },
       {
         headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': '*',
-          'Access-Control-Allow-Headers': '*',
+          'Keep-Alive': 'timeout=60',
+            ...cors,
         },
       }
     )
@@ -53,11 +60,25 @@ export async function loader({ request }: LoaderArgs) {
   const tu = a / tickToPrice(Number(tickUpper))
   const agent = await createAgent()
   console.log('inspect tx', tickLower, tickUpper, amount0, amount1, tl, tu)
-  const reply = await agent(`Sending uniswap pool mint transaction for pool ${token1}-${token0}.
-  Depositing ${amount1} ${token1} and ${amount0} ${token0}, price range is ${tl} to ${tu}.
-  What fees should I expected daily, weekly and monthly?
-  Describe in human readable form. No machine text.
-`)
-  console.log(reply)
-  return json({ message: reply.output })
+  const body = new PassThrough()
+
+  setTimeout(async () => {
+    console.log('calling agent')
+    const reply = await agent(`Sending uniswap pool mint transaction for pool ${token1}-${token0}.
+    Depositing ${amount1} ${token1} and ${amount0} ${token0}, price range is ${tl} to ${tu}.
+    What fees should I expected daily, weekly and monthly?
+    Describe in human readable form. No machine text.
+  `)
+    console.log(reply)
+    body.write(JSON.stringify({message: reply.output}))
+    body.end()
+  }, 1)
+
+  return new Response(body, {
+      headers: {
+        'content-type': 'application/json',
+        'keep-alive': 'timeout=60',
+        ...cors,
+      }
+   })
 }
