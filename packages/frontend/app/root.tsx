@@ -31,7 +31,14 @@ interface DocumentProps {
 function Layout({ children }: DocumentProps) {
   return (
     <VStack w="full" h="100vh">
-      <HStack px="8" py="6" borderBottom="1px solid" borderColor="gray.700" w="full" justify="space-between">
+      <HStack
+        px="8"
+        py="6"
+        borderBottom="1px solid"
+        borderColor="gray.700"
+        w="full"
+        justify="space-between"
+      >
         <Box>De_Terminal</Box>
         <HStack spacing="6">
           <Link to="/">Home</Link>

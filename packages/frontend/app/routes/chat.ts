@@ -7,9 +7,9 @@ import { tickToPrice } from '~/lib/tools'
 import { createAgent } from '~/lib/agent'
 
 const cors = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': '*',
-    'Access-Control-Allow-Headers': '*',
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': '*',
+  'Access-Control-Allow-Headers': '*',
 }
 
 export async function loader({ request }: LoaderArgs) {
@@ -19,7 +19,7 @@ export async function loader({ request }: LoaderArgs) {
       {
         headers: {
           'Keep-Alive': 'timeout=60',
-            ...cors,
+          ...cors,
         },
       }
     )
@@ -70,15 +70,15 @@ export async function loader({ request }: LoaderArgs) {
     Describe in human readable form. No machine text.
   `)
     console.log(reply)
-    body.write(JSON.stringify({message: reply.output}))
+    body.write(JSON.stringify({ message: reply.output }))
     body.end()
   }, 1)
 
   return new Response(body, {
-      headers: {
-        'content-type': 'application/json',
-        'keep-alive': 'timeout=60',
-        ...cors,
-      }
-   })
+    headers: {
+      'content-type': 'application/json',
+      'keep-alive': 'timeout=60',
+      ...cors,
+    },
+  })
 }

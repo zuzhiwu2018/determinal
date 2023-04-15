@@ -4,7 +4,7 @@
   "private": true,
   "description": "",
   "scripts": {
-    "start:api": "turbo run --filter=determinal-api start",
+    "start:uni": "turbo run --filter=determinal-university start",
     "start:snap": "turbo run --filter=determinal-snap start",
     "start:frontend": "turbo run --filter=determinal-frontend start",
     "lint": "turbo run lint --parallel",
