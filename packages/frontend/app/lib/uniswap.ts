@@ -1,5 +1,11 @@
 // Uniswap V3 helpers.
-// All code copyright of the uniswap.fish authors.
+// import { AlchemyProvider } from 'ethers'
+
+// const ALCHEMY_API_KEY = process.env.ALCHEMY_API_KEY ?? ''
+
+// const provider = new AlchemyProvider('mainnet', ALCHEMY_API_KEY)
+
+// All code below this comment is copyright of the uniswap.fish authors.
 
 interface TokensAmount {
   amountX: number

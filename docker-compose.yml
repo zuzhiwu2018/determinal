@@ -1,0 +1,12 @@
+version: '1'
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: determinal
+      POSTGRES_USER: determinal
+      POSTGRES_DB: determinal
+    ports:
+    - 5432:5432
+

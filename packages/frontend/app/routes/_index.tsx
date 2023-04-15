@@ -8,6 +8,7 @@ import {
   Divider,
   Input,
   Text,
+  useDisclosure,
   VStack,
 } from '@chakra-ui/react'
 import { ActionArgs, json } from '@remix-run/node'
@@ -45,14 +46,26 @@ function Step({ step }: { step: AgentStep }) {
 }
 
 function ChatResponse({ response }: { response: Reply }) {
+  const { isOpen, onToggle } = useDisclosure()
   return (
     <VStack>
-      <VStack spacing="6">
-        {response.intermediateSteps.map((step, idx) => (
-          <Step key={idx} step={step} />
-        ))}
-      </VStack>
-      <Text>{response.output}</Text>
+      <Card w="5xl" bg="green.800">
+        <CardHeader>Response</CardHeader>
+        <Divider />
+        <CardBody>
+          <Text>{response.output}</Text>
+        </CardBody>
+      </Card>
+      <Box>
+        <Button w="full" mb="6" onClick={onToggle}>
+          Show Steps
+        </Button>
+        <VStack spacing="6" h={isOpen ? 'full' : 0} overflow="hidden">
+          {response.intermediateSteps.map((step, idx) => (
+            <Step key={idx} step={step} />
+          ))}
+        </VStack>
+      </Box>
     </VStack>
   )
 }

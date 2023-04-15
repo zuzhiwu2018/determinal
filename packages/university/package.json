@@ -3,11 +3,27 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
+    "start": "ts-node ./src/index.ts",
+    "codegen": "genql --endpoint https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3 --output ./src/generated",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint --fix src --ext .ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/node": "^18.15.11"
+    "@types/node": "^18.15.11",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "@genql/cli": "^3.0.5",
+    "@uniswap/sdk-core": "^3.2.2",
+    "@uniswap/v3-core": "^1.0.1",
+    "dotenv": "^16.0.3",
+    "genql": "^2.0.1",
+    "ts-postgres": "^1.3.0"
+  },
+  "eslintConfig": {
+    "ignorePatterns": [
+      "src/generated"
+    ]
   }
 }
