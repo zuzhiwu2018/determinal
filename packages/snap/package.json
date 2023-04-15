@@ -17,9 +17,11 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@metamask/snaps-cli": "^0.30.0"
+    "@metamask/snaps-cli": "^0.30.0",
+    "@types/node": "^18.15.11"
   },
   "dependencies": {
+    "@metamask/abi-utils": "^1.2.0",
     "@metamask/snaps-types": "^0.32.2",
     "@metamask/snaps-ui": "^0.32.2"
   }

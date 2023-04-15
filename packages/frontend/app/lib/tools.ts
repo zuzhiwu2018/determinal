@@ -16,7 +16,7 @@ async function makeClient() {
   return client
 }
 
-function tickToPrice(tick: number): number {
+export function tickToPrice(tick: number): number {
   return Math.pow(1.0001, tick)
 }
 

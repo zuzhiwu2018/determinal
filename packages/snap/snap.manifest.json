@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "description": "An example Snap written in TypeScript.",
-  "proposedName": "TypeScript Example Snap",
+  "description": "Help understand Uniswap V3 liquidity",
+  "proposedName": "DeTerminal Tx Analyzer",
   "source": {
-    "shasum": "UiQg//7D/MjQXHK+toNxQzAbapg5iLhH3Swviq/JlG8=",
+    "shasum": "Gr1UWq9KvUi/J6Bb/pH52Q79u7IADxLO3UDNdkoXFEM=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

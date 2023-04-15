@@ -90,7 +90,7 @@ async function main() {
         console.log('No pool for pair', symbol0, symbol1)
         continue
       }
-      console.log(pool)
+
       await client.query(
         `
         insert into pools(address, token0, token1, token0Price, token1Price, liquidity, tick) values($1, $2, $3, $4, $5, $6, $7)
